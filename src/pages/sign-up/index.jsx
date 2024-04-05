@@ -38,11 +38,12 @@ export default function RegisterPage() {
         //registration logic vith dynamic (post)
     }
     return (
-        <Container>
+        <Container className='signup p-5'> 
             <Row>
                 <Col>
+                    <Form className='text-center fs-1'>  Create an Account</Form>
                   {!responseStatus ? 
-                    <Form onSubmit={handleSubmitForm}>
+                    <Form onSubmit={handleSubmitForm}> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" name='name' placeholder="Enter name" onChange={handleFormInput} />
@@ -60,13 +61,11 @@ export default function RegisterPage() {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name='password' placeholder="Password" onChange={handleFormInput} />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+                 
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                </Form> : <h1>Registred Sucessfully <Link href={'/login'}>Go to Login</Link></h1> }
+                </Form> : <h1>Registred Sucessfully <Link href={'/login-form'}>Go to Login</Link></h1> }
                 </Col>
             </Row>
         </Container>
